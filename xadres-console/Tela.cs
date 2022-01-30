@@ -72,7 +72,7 @@ namespace xadres_console
             }
             else
             {
-                if(peca.Cor == Cor.Branca)
+                if(peca.cor == Cor.Branca)
                 {
                     Console.Write(peca);
                 }
