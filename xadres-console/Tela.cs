@@ -15,13 +15,25 @@ namespace xadres_console
             imprimirPecasCapturadas(partida);
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+            if (!partida.terminada)
+            {
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                if (partida.xeque)
+                {
+                    Console.WriteLine("XEQUE!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine(" Vencedor: " + partida.jogadorAtual);
+            }
         }
 
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
-            Console.WriteLine("Peças capturadas: ");
+            Console.WriteLine("Peças Capturadas: ");
             Console.Write("Brancas: ");
             imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
             Console.WriteLine();
@@ -40,7 +52,7 @@ namespace xadres_console
             {
                 Console.Write(x + " ");
             }
-            Console.Write(conjunto + "]");
+            Console.Write("]");
         }
 
 
@@ -64,7 +76,7 @@ namespace xadres_console
         {
 
             ConsoleColor fundoOriginal = Console.BackgroundColor;
-            ConsoleColor fundoAlterado = ConsoleColor.DarkGreen;
+            ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
 
             for (int i = 0; i < tab.linhas; i++)
             {
