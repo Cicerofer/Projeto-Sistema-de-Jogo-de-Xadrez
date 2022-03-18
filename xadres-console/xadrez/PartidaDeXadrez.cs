@@ -41,7 +41,7 @@ namespace xadrez
                 capturadas.Add(pecaCapturada);
             }
 
-            //#jogadaespecial roque pequeno
+            // #jogadaespecial roque pequeno
             if(p is Rei && destino.coluna == origem.coluna + 2)
             {
                 Posicao origemT = new Posicao(origem.linha, origem.coluna + 3); 
@@ -51,7 +51,7 @@ namespace xadrez
                 tab.colocarPeca(T, destinoT);
             }
 
-            //#jogadaespecial roque grande
+            // #jogadaespecial roque grande
             if (p is Rei && destino.coluna == origem.coluna - 2)
             {
                 Posicao origemT = new Posicao(origem.linha, origem.coluna - 4);
